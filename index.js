@@ -6,8 +6,27 @@ require('dotenv').config();
 const app = express();
 
 // Configure CORS options to allow your specific frontend origin and credentials
+const allowedOrigins = [
+  process.env.CORS_ORIGIN,
+  'http://localhost:8080',
+  'http://127.0.0.1:8080',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173'
+].filter(Boolean);
+
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN, // This should be your frontend's URL, e.g., 'http://localhost:3001'
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, or postman)
+    if (!origin) return callback(null, true);
+    if (
+      allowedOrigins.includes(origin) ||
+      origin.startsWith('http://localhost:') ||
+      origin.startsWith('http://127.0.0.1:')
+    ) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'), false);
+  },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Specify the HTTP methods your frontend will use
   credentials: true, // This is crucial if your frontend sends cookies or auth headers
 };
@@ -30,7 +49,9 @@ app.use('/api/volunteer', volunteerRoutes);
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 2000,
+    });
     console.log('MongoDB Connected');
 
     // Auto-seed default blogs if empty

@@ -21,10 +21,12 @@ app.use(express.json());
 const contactRoutes = require('./routes/contact');
 const donationRoutes = require('./routes/donations');
 const blogRoutes = require('./routes/blogs');
+const volunteerRoutes = require('./routes/volunteer');
 
 app.use('/api/contact', contactRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/blogs', blogRoutes);
+app.use('/api/volunteer', volunteerRoutes);
 
 const startServer = async () => {
   try {
@@ -45,6 +47,33 @@ const startServer = async () => {
           author: "60c72b2f9b1d8c001f8e4a9a",
           tags: ["Field Diaries", "Gaza", "Emergency"],
           featuredImage: "https://images.unsplash.com/photo-1527576539890-dfa815648363?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Sudan's Forgotten Famine: A Call for Urgent Aid",
+          slug: "sudan-forgotten-famine-urgent-aid",
+          excerpt: "With over 10 million displaced, our teams describe the silent starvation sweeping across camps in Darfur.",
+          content: "Humanitarian conditions in Sudan are at a breaking point. Rebel blockades and intense fighting have cut off food imports, leading to a catastrophic famine in Darfur. Mothers are walking for miles carrying skeletal babies. Our emergency team is distributing high-protein therapeutic peanut pastes, clean water tanks, and trauma medical supplies.",
+          author: "60c72b2f9b1d8c001f8e4a9a",
+          tags: ["Field Diaries", "Sudan", "Famine Relief"],
+          featuredImage: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Ukraine Winter: Shivering in the Shadows of Destroyed Power Grids",
+          slug: "ukraine-winter-shivering-destroyed-grids",
+          excerpt: "How mobile heaters and wood stoves are keeping elderly and infants alive in freezing unheated shelters.",
+          content: "Temperatures have fallen below -15°C across eastern Ukraine. Damage to local heating grids means families must huddle together in basement shelters to survive. Our partners on the ground are installing wood-burning stoves, supplying firewood, and delivering thermal coats and boots directly to those trapped in isolated apartment blocks.",
+          author: "60c72b2f9b1d8c001f8e4a9a",
+          tags: ["Winter Appeal", "Ukraine", "Emergency Response"],
+          featuredImage: "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "DR Congo: Containing Epidemics in Overcrowded Camps",
+          slug: "dr-congo-containing-epidemics-camps",
+          excerpt: "With Mpox spreading rapidly through Goma's refugee camps, clean water and isolation zones are our top priority.",
+          content: "Escalating conflict has forced thousands of families into makeshift displacement camps outside of Goma. Due to overcrowding and lack of sanitation, infectious outbreaks, including a dangerous Mpox strain, are rising. Our medical teams are setting up containment areas, providing sanitization kits, and supplying camp clinics with antibiotics, protective gear, and clean water tablets.",
+          author: "60c72b2f9b1d8c001f8e4a9a",
+          tags: ["Health Emergency", "DR Congo", "Displacement"],
+          featuredImage: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
           title: "Donor Spotlight: The Johnson Family's 10-Year Journey",
@@ -93,7 +122,7 @@ const startServer = async () => {
         }
       ];
       await Blog.insertMany(defaultBlogs);
-      console.log('Seeded 6 blog posts successfully');
+      console.log('Seeded blog posts successfully');
     }
   } catch (err) {
     console.warn('\n======================================================');

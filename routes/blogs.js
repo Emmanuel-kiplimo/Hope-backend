@@ -14,11 +14,44 @@ const defaultBlogs = [
     slug: "field-diary-30-days-in-gaza",
     excerpt: "Our team shares raw, unfiltered accounts from the ground as we help families rebuild after devastating attacks.",
     content: "Humanitarian conditions in Gaza are extremely critical. Our ground teams have spent 30 days distributing heavy thermal shelter kits, food, and clean water. Here is a raw account of what we witness...",
-    author: "Sarah Ahmed", // We will output author name directly for fallback ease
+    author: "Sarah Ahmed",
     tags: ["Field Diaries", "Gaza", "Emergency"],
     featuredImage: "https://images.unsplash.com/photo-1527576539890-dfa815648363?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     createdAt: new Date("2026-05-15T12:00:00Z"),
     updatedAt: new Date("2026-05-15T12:00:00Z")
+  },
+  {
+    title: "Sudan's Forgotten Famine: A Call for Urgent Aid",
+    slug: "sudan-forgotten-famine-urgent-aid",
+    excerpt: "With over 10 million displaced, our teams describe the silent starvation sweeping across camps in Darfur.",
+    content: "Humanitarian conditions in Sudan are at a breaking point. Rebel blockades and intense fighting have cut off food imports, leading to a catastrophic famine in Darfur. Mothers are walking for miles carrying skeletal babies. Our emergency team is distributing high-protein therapeutic peanut pastes, clean water tanks, and trauma medical supplies.",
+    author: "Fatima Al-Nur",
+    tags: ["Field Diaries", "Sudan", "Famine Relief"],
+    featuredImage: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    createdAt: new Date("2026-05-14T12:00:00Z"),
+    updatedAt: new Date("2026-05-14T12:00:00Z")
+  },
+  {
+    title: "Ukraine Winter: Shivering in the Shadows of Destroyed Power Grids",
+    slug: "ukraine-winter-shivering-destroyed-grids",
+    excerpt: "How mobile heaters and wood stoves are keeping elderly and infants alive in freezing unheated shelters.",
+    content: "Temperatures have fallen below -15°C across eastern Ukraine. Damage to local heating grids means families must huddle together in basement shelters to survive. Our partners on the ground are installing wood-burning stoves, supplying firewood, and delivering thermal coats and boots directly to those trapped in isolated apartment blocks.",
+    author: "Andriy Kovalenko",
+    tags: ["Winter Appeal", "Ukraine", "Emergency Response"],
+    featuredImage: "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    createdAt: new Date("2026-05-13T12:00:00Z"),
+    updatedAt: new Date("2026-05-13T12:00:00Z")
+  },
+  {
+    title: "DR Congo: Containing Epidemics in Overcrowded Camps",
+    slug: "dr-congo-containing-epidemics-camps",
+    excerpt: "With Mpox spreading rapidly through Goma's refugee camps, clean water and isolation zones are our top priority.",
+    content: "Escalating conflict has forced thousands of families into makeshift displacement camps outside of Goma. Due to overcrowding and lack of sanitation, infectious outbreaks, including a dangerous Mpox strain, are rising. Our medical teams are setting up containment areas, providing sanitization kits, and supplying camp clinics with antibiotics, protective gear, and clean water tablets.",
+    author: "Jean-Pierre Kabange",
+    tags: ["Health Emergency", "DR Congo", "Displacement"],
+    featuredImage: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    createdAt: new Date("2026-05-12T12:00:00Z"),
+    updatedAt: new Date("2026-05-12T12:00:00Z")
   },
   {
     title: "Donor Spotlight: The Johnson Family's 10-Year Journey",
